@@ -2,8 +2,8 @@
   <mat-grid-tile>
     <mat-list role="list">
       <mat-list-item role="listitem"
-                     *ngFor="let item of employees$ | async">{{item.employee_name}} {{item.employee_age}}
-        <button mat-raised-button color="primary" (click)="selectEmployee(item.id)">Show details</button>
+                     *ngFor="let item of employees$ | async">{{item.employee_name}}
+        <button mat-button color="primary" (click)="selectEmployee(item.id)">Show salary</button>
       </mat-list-item>
     </mat-list>
   </mat-grid-tile>
@@ -11,7 +11,7 @@
     <ng-container *ngIf="details$ | async as item">
       <mat-card>
         <mat-card-title>{{ item.employee_name }}</mat-card-title>
-        <mat-card-content>{{item.employee_age}} {{item.employee_salary}}$</mat-card-content>
+        <mat-card-content>{{item.employee_salary}}$</mat-card-content>
       </mat-card>
     </ng-container>
   </mat-grid-tile>
