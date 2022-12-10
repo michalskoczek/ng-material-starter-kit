@@ -5,6 +5,7 @@ import {EmployeeComponent} from './components/employee/employee.component';
 import {CryptoComponent} from './components/crypto/crypto.component';
 import {ProductListComponent} from './components/product-list/product-list.component';
 import {CategoryComponent} from './components/category/category.component';
+import {CryptoEmptyStateComponent} from './components/crypto-empty-state/crypto-empty-state.component';
 import {ProductComponentModule} from './components/product/product.component-module';
 import {ProductServiceModule} from './services/product.service-module';
 import {EmployeeComponentModule} from './components/employee/employee.component-module';
@@ -14,6 +15,7 @@ import {CryptoCurrencyServiceModule} from './services/crypto-currency.service-mo
 import {ProductListComponentModule} from './components/product-list/product-list.component-module';
 import {CategoryComponentModule} from './components/category/category.component-module';
 import {CategoryServiceModule} from './services/category.service-module';
+import {CryptoEmptyStateComponentModule} from './components/crypto-empty-state/crypto-empty-state.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{
@@ -25,7 +27,10 @@ import {CategoryServiceModule} from './services/category.service-module';
   }, {path: 'products', component: ProductListComponent}, {
     path: 'categories',
     component: CategoryComponent
-  }]), ProductComponentModule, ProductServiceModule, EmployeeComponentModule, EmployeeServiceModule, CryptoComponentModule, CryptoCurrencyServiceModule, ProductListComponentModule, CategoryComponentModule, CategoryServiceModule],
+  }, {
+    path: 'crypto',
+    component: CryptoEmptyStateComponent
+  }]), ProductComponentModule, ProductServiceModule, EmployeeComponentModule, EmployeeServiceModule, CryptoComponentModule, CryptoCurrencyServiceModule, ProductListComponentModule, CategoryComponentModule, CategoryServiceModule, CryptoEmptyStateComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
