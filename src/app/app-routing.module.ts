@@ -7,6 +7,7 @@ import {ProductListComponent} from './components/product-list/product-list.compo
 import {CategoryComponent} from './components/category/category.component';
 import {CryptoEmptyStateComponent} from './components/crypto-empty-state/crypto-empty-state.component';
 import {PublicHolidaysComponent} from './components/public-holidays/public-holidays.component';
+import {CategoriesCheckboxesComponent} from './components/categories-checkboxes/categories-checkboxes.component';
 import {ProductComponentModule} from './components/product/product.component-module';
 import {ProductServiceModule} from './services/product.service-module';
 import {EmployeeComponentModule} from './components/employee/employee.component-module';
@@ -18,6 +19,9 @@ import {CategoryComponentModule} from './components/category/category.component-
 import {CategoryServiceModule} from './services/category.service-module';
 import {CryptoEmptyStateComponentModule} from './components/crypto-empty-state/crypto-empty-state.component-module';
 import {PublicHolidaysComponentModule} from './components/public-holidays/public-holidays.component-module';
+import {
+  CategoriesCheckboxesComponentModule
+} from './components/categories-checkboxes/categories-checkboxes.component-module';
 
 @NgModule({
   imports: [RouterModule.forRoot([{
@@ -32,7 +36,10 @@ import {PublicHolidaysComponentModule} from './components/public-holidays/public
   }, {path: 'crypto', component: CryptoEmptyStateComponent}, {
     path: 'public-holidays',
     component: PublicHolidaysComponent
-  }]), ProductComponentModule, ProductServiceModule, EmployeeComponentModule, EmployeeServiceModule, CryptoComponentModule, CryptoCurrencyServiceModule, ProductListComponentModule, CategoryComponentModule, CategoryServiceModule, CryptoEmptyStateComponentModule, PublicHolidaysComponentModule],
+  }, {
+    path: 'checkbox-categories',
+    component: CategoriesCheckboxesComponent
+  }]), ProductComponentModule, ProductServiceModule, EmployeeComponentModule, EmployeeServiceModule, CryptoComponentModule, CryptoCurrencyServiceModule, ProductListComponentModule, CategoryComponentModule, CategoryServiceModule, CryptoEmptyStateComponentModule, PublicHolidaysComponentModule, CategoriesCheckboxesComponentModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
